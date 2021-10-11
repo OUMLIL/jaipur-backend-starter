@@ -5,7 +5,7 @@ import lodash from "lodash"
 // Prevent database service to write tests game to filesystem
 jest.mock("fs")
 
-jest.mock("loadash")
+jest.mock("lodash")
 loadash.shuffle.mockimplementation((x) => x)
 
 // TODO: Mock lodash shuffle
