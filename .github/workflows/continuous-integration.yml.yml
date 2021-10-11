@@ -17,5 +17,7 @@ jobs:
   ESLint:
     runs-on: ubuntu-latest
     steps:
+      - name: Installing ESLint
+        run: npm install eslint
       - name: lunching ESLINT
         run: npm run lint
