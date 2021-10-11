@@ -14,3 +14,8 @@ jobs:
         run: npm install
       - name: Run tests
         run: npm run test
+  ESLint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: lunching ESLINT
+        run: npm run lint
