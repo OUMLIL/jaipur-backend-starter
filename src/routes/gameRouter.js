@@ -10,4 +10,9 @@ router.post("/", function (req, res) {
   res.status(201).json(newGame)
 })
 
+router.get("/", function (req, res) {
+  const games = gameService.getAll()
+  res.status(200).json(games)
+})
+
 export default router
