@@ -27,6 +27,23 @@ export function saveGame(game) {
   } catch (e) {
     // Do nothing
   }
+
   fs.writeFileSync(path.join(DATABASE_FILE), JSON.stringify(games))
   return games
 }
+
+export function deleteGameById(gameId) {
+  const games = getGames()
+  const gId = Number.parseInt(gameId)
+  const gameIndex = games.findIndex((g) => g.id === gId)
+  games.splice(gameIndex, 1)
+
+  try {
+    fs.mkdirSync(path.dirname(DATABASE_FILE))
+  } catch (e) {
+    // Do nothing
+  }
+  fs.writeFileSync(path.join(DATABASE_FILE), JSON.stringify(games))
+  return games
+}
+
