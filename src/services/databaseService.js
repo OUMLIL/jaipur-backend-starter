@@ -13,6 +13,15 @@ export function getGames() {
   }
 }
 
+// Get a game by its id
+export function getGameById(gameId) {
+  const games = getGames()
+  const gameIndex = games.findIndex((g) => g.id === gameId)
+  if (gameIndex >= 0) {
+    return games[gameIndex]
+  }
+}
+
 // Save a game to storage/database.json
 export function saveGame(game) {
   const games = getGames()

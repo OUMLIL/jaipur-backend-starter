@@ -102,3 +102,7 @@ export function createGame(name) {
 export function getAll() {
   return databaseService.getGames()
 }
+
+export function getById(id){
+  return databaseService.getGameById(id)
+}
