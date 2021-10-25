@@ -98,3 +98,11 @@ export function createGame(name) {
     databaseService.saveGame(game)
     return game
 }
+
+export function getAll() {
+  return databaseService.getGames()
+}
+
+export function getById(id){
+  return databaseService.getGameById(id)
+}
