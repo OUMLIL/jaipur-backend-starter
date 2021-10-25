@@ -20,4 +20,11 @@ router.get("/", function (req, res) {
   res.status(200).json(games)
 })
 
+router.delete("/:id", function (req, res) {
+  // TODO return 400 if req.body.name doesn't exist
+  console.log(req.params.id)
+  const newGame = dataBaseService.deleteGameById(req.params.id)
+  res.status(200).json(newGame)
+})
+
 export default router
